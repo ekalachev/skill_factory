@@ -1,8 +1,3 @@
-/module_0/.ipynb_checkpoints/*
-/.ipynb_checkpoints/*
-/lessons/.ipynb_checkpoints/*
 /data/vk_credentials.txt
 /lessons/vk_config.v2.json
-/module_1/.ipynb_checkpoints/*
-python-data-science-handbook/.ipynb_checkpoints/NumPy-checkpoint.ipynb
-python-data-science-handbook/.ipynb_checkpoints/Pandas-checkpoint.ipynb
+*/.ipynb_checkpoints/*
