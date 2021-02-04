@@ -37,5 +37,7 @@
 
 
 **MAE по результатам: --**
+
 **Kaggle Public Leaderboard: -- место на -- февраля (MAE: --)**
+
 **Ник на Kaggle - Eldar Kalachev (ekalachev)**
