@@ -1,3 +1,4 @@
 /data/vk_credentials.txt
 /lessons/vk_config.v2.json
 **/.ipynb_checkpoints/*
+.DS_Store
