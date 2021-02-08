@@ -36,6 +36,6 @@
 - Построение модели
 
 
-### MAE по результатам: --
-### Kaggle Public Leaderboard: -- место на -- февраля (MAE: --)
+### MAE по результатам: MAE: 0.163
+### Kaggle Public Leaderboard: 41 место на 8 февраля (0.17)
 ### Ник на Kaggle.com - Eldar Kalachev (ekalachev)
