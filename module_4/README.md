@@ -29,10 +29,19 @@ Results are estimated by [the area under the ROC AUC curve](https://en.wikipedia
 ### View file
 For each client_id in the test suite, you must predict the probability for the default variable. The file must contain a header and have the following format:
 
-```
-client_id, default
-66799,0.44100
-25379, 0.13809174
-```
+<table>
+  <tr>
+    <th>client_id</th>
+    <th>default</th>
+  </tr>
+  <tr>
+    <td>66799</td>
+    <td>0.44100</td>
+  </tr>
+   <tr>
+    <td>25379</td>
+    <td>0.13809174</td>
+  </tr>
+</table>
 
 where `client_id` is the borrower's identifier, default is the probability of default on the loan.
