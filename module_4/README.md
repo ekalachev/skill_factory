@@ -2,9 +2,9 @@
 
 # The project #4. Bank credit scoring.
 
-The team: [Eldar Kalachev](https://github.com/ekalachev)
+The team: [Anna Kostyakova](https://github.com/anna-kostyakova), [Eldar Kalachev](https://github.com/ekalachev)
 
-The team name on kaggle.com: <Team name>
+The team name on kaggle.com: **Team One**
 
 [The noutebook](./bank_credit_scoring.ipynb)
 
