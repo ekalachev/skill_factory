@@ -1,6 +1,14 @@
-# Bank credit scoring
+![Title PNG "Skill Factory"](./assets/skillfactory_logo.png)
 
-## Description
+# The project #4. Bank credit scoring.
+
+The team: [Anna Kostyakova](https://github.com/anna-kostyakova), [Eldar Kalachev](https://github.com/ekalachev)
+
+The team name on kaggle.com: **Team One**
+
+[The noutebook](./bank_credit_scoring.ipynb)
+
+## The task description
 
 Welcome to the machine learning hackathon!
 
