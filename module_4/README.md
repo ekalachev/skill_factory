@@ -1,55 +1,74 @@
 ![Title PNG "Skill Factory"](./assets/skillfactory_logo.png)
 
-# The project #4. Bank credit scoring.
+# SkillFactory_Projects
+Projects for SkillFactory DST
 
-The team: [Anna Kostyakova](https://github.com/anna-kostyakova), [Eldar Kalachev](https://github.com/ekalachev)
+# Project - Bank credit scoring
+- Team: **[Anna Kostyakova](https://github.com/anna-kostyakova)**, **[Eldar Kalachev](https://github.com/ekalachev)**
+- Team name on Kaggle.com - Team one
+- **[Kaggle notebook](https://www.kaggle.com/ekalachev/bank-credit-scoring-team-one)**
 
-The team name on kaggle.com: **Team One**
+### Public score on Kaggle.com - 0.73778
 
-[The noutebook](./bank_credit_scoring.ipynb)
+## Задание
+Построение модели для прогнозирования вероятности дефолта заемщика.
 
-## The task description
+### Описание признаков
+- client_id - идентификатор клиента
+- education - уровень образования
+- sex - пол заемщика
+- age - возраст заемщика
+- car - флаг наличия автомобиля
+- car_type - флаг автомобиля иномарки
+- decline_app_cnt - количество отказанных прошлых заявок
+- good_work - флаг наличия “хорошей” работы
+- bki_request_cnt - количество запросов в БКИ
+- home_address - категоризатор домашнего адреса
+- work_address - категоризатор рабочего адреса
+- income - доход заемщика
+- foreign_passport - наличие загранпаспорта
+- sna - связь заемщика с клиентами банка
+- first_time - давность наличия информации о заемщике
+- score_bki - скоринговый балл по данным из БКИ
+- region_rating - рейтинг региона
+- app_date - дата подачи заявки
+- default - флаг дефолта по кредиту
 
-Welcome to the machine learning hackathon!
+### В результате работы над данными:
+- был произведен разведывательный анализ данных
+- была произведена очистка данных и отработка выбросов (в финальной версии удаление и сглаживание выбросов нет, так как это ухудшало качество модели, оставлено только логарифмирование и дополнительная помощь модели в виде преобразования признаков дополнительно в категориальные)
+- созданы новые признаки
+- отбраны признаки для модели по значимости
+- произведена балансировка классов с помощью undersampling
+- подобраны оптимальные гиперпараметры для модели
+- проведена проверка модели на переобучение - результат отрицательный
 
-Imagine that you are working as an intern at a branch of a regional bank. You also do database queries and build reports. You caught yourself thinking that you imagined the work of a Data Scientist in a completely different way ...
+#### Для улучшения качества модели были также использованы следующие инструменты:
+- stratified shuffle split
+- SelectKBest (f_classif, mutual_info_classif, chi2)
+- SMOTE oversampling
 
-And today, when you were already on the verge of despair, your boss came to you with the long-awaited news. Let's build a model!
+В разных комбинациях данные инструменты улучшали показатели нашей модели. Особенно хорошие показатели были при использовании SMOTE. **Были достигнуты следующие показатели:**
+- ROC AUC - 0.7552
+- Balanced accuracy - 0.688
+- F1-score - 0.692
+- Precision score - 0.685
+- Recall score - 0.699
+- TP - 9013
+- FP - 4148
+- FN - 3881
+- TN - 8729
 
-“Great,” you think, “finally I can do real work!”
+Однако при использовании данной модели для submission на Kaggle.com соревновательная метрика была хуже, чем без SMOTE, stratified shuffle split & SelectKBest. Разница была в 1-2 сотые, и в рамках соревнования **было принято решение оставить лучший результат submission только на undersampling.**
+Также можно обратить внимание, что в гиперпараметрах указан class_weight = 'balanced', что не является принципиальным, так как классы сбалансировали до запуска модели. Но добавление этого параметра все равно улучшает метрики (на тысячные доли). Поэтому в рамках соревнования параметр решено оставить.
 
-Your task will be to build a scoring model for the bank's secondary clients, which would predict the likelihood of a client's default. To do this, you will need to determine the significant parameters of the borrower.
+### Вывод
+В результате преобразований и в сравнении с наивной моделью мы видим значительные улучшения предсказательной способности нашей модели с учетом небольшого количества имеющихся данных. В 68% случаев наша модель верно определяет класс клиента.
 
-### Competition conditions:
-- This competition is unlimited and available for all streams.
-- The deadline for the competition is set individually in each stream.
-- The test sample is presented in the entire Leaderboard.
-- Therefore, the best and winning solutions will be checked for their "adequacy" (so that there is no fit for the test sample).
-- It is allowed to use any ML algorithms and libraries (except DL).
-- We make a real ML product, which can then work normally on new data.
-
-### Additionally
-Please note that for this competition we are compiling a so-called baseline step by step on the platform, which can help you form your own winning decision.
-
-### Quality metric
-Results are estimated by [the area under the ROC AUC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
-
-### View file
-For each client_id in the test suite, you must predict the probability for the default variable. The file must contain a header and have the following format:
-
-<table>
-  <tr>
-    <th>client_id</th>
-    <th>default</th>
-  </tr>
-  <tr>
-    <td>66799</td>
-    <td>0.44100</td>
-  </tr>
-   <tr>
-    <td>25379</td>
-    <td>0.13809174</td>
-  </tr>
-</table>
-
-where `client_id` is the borrower's identifier, default is the probability of default on the loan.
+### Работа в команде
+Данный проект готовился в команде из двух участников. Оба участника команды внесли одинаковый вклад в финальный результат команды. Для отработки навыков каждый из членов команды занимался:
+- разведывательным анализом данных (очистка данных, работа с выбросами, визуализация)
+- генерация новых признаков, отбор значимых признаков
+- написание функций и проведение экспериментов для улучшения качества модели (включая oversampling, undersampling, deature selection, stratified shuffle split, etc.)
+- подбор и настройка гиперпараметров для модели
+- оформление презентационной работы
