@@ -2,3 +2,6 @@
 /lessons/vk_config.v2.json
 **/.ipynb_checkpoints/*
 .DS_Store
+module_6/data/cars/*
+module_6/hw/parsed_data.csv
+module_6/hw/test.csv
