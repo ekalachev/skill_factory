@@ -4,7 +4,7 @@
 Projects for SkillFactory DST
 
 # Project - Car Price prediction
-- Team: **[Anna Kostyakova](https://github.com/anna-kostyakova)**, **[Eldar Kalachev](https://github.com/ekalachev)**
+- Team: **[Eldar Kalachev](https://github.com/ekalachev)**, **[Anna Kostyakova](https://github.com/anna-kostyakova)**
 - Team name on Kaggle.com - StackTeam
 - **[Kaggle notebook](https://www.kaggle.com/annakostyakova/car-price-prediction)**
 - [Ссылка на папку с данными](https://drive.google.com/drive/folders/1ghbdt3hYx8V02-7KqcEI73X8uVkqgQQZ?usp=sharing)
